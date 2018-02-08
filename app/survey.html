@@ -3,9 +3,13 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Survey</title>
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	  <script src="https://code.jquery.com/jquery.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
 </head>
 <body>
-	<h2>ch question with a number from 1-5, 1 being not very much.</h2>
+	<h2>Answer each question with a number from 1-5, 1 being not very much.</h2>
 	<form>
 		<table>
 			<tr>
@@ -45,10 +49,15 @@
 			</tr>
 			<tr>
 				<td>How much do you like Florida?</td>
-				<td><input type="text" id="code"/></td>
+				<td><input type="text" id="florida"/></td>
 			</tr>
-			<submit type="submit">Submit</submit>
+		</table>
+	<button class="submit" type="submit">Submit</button>
 	</form>
+
+
+<!-- Need to create modal to display friend -->
+
 </body>
 </html>
 
@@ -58,8 +67,8 @@
       event.preventDefault();
 
       // Here we grab the form elements
-      var newScore = {[
-        $("#reserve-name").val().trim(),
+      var newScore = {
+      	"scores": [
         $("#code").val().trim(),
         $("#chicken").val().trim(),
         $("#beach").val().trim(),
