@@ -161,3 +161,5 @@ friends = [
 }
 
 ];
+
+module.exports = friends;
