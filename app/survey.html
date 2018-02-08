@@ -5,7 +5,7 @@
 	<title>Survey</title>
 </head>
 <body>
-	<h2>Answer each question with a number from 1-5, 1 being not very much.</h2>
+	<h2>ch question with a number from 1-5, 1 being not very much.</h2>
 	<form>
 		<table>
 			<tr>
@@ -47,6 +47,64 @@
 				<td>How much do you like Florida?</td>
 				<td><input type="text" id="code"/></td>
 			</tr>
+			<submit type="submit">Submit</submit>
 	</form>
 </body>
 </html>
+
+<script>
+
+    $(".submit").on("click", function(event) {
+      event.preventDefault();
+
+      // Here we grab the form elements
+      var newScore = {[
+        $("#reserve-name").val().trim(),
+        $("#code").val().trim(),
+        $("#chicken").val().trim(),
+        $("#beach").val().trim(),
+        $("#sports").val().trim(),
+        $("#sublime").val().trim(),
+        $("#fish").val().trim(),
+        $("#cook").val().trim(),
+        $("#music").val().trim(),
+        $("#disney").val().trim(),
+        $("#florida").val().trim()
+      ]};
+
+      console.log(newScore);
+
+    
+
+      $.post("/api/friends", newScore,
+        function(data) {
+
+          // You are matched with
+          console.log(data);
+          if (data) {
+            alert("You are matched with...");
+          }
+
+          
+          else {
+            alert("No data");
+          }
+
+          // Clear the form when submitting
+        $("#reserve-name").val().trim()
+        $("#code").val().trim()
+        $("#chicken").val().trim()
+        $("#beach").val().trim()
+        $("#sports").val().trim()
+        $("#sublime").val().trim()
+        $("#fish").val().trim()
+        $("#cook").val().trim()
+        $("#music").val().trim()
+        $("#disney").val().trim()
+        $("#florida").val().trim()
+
+        });
+
+    });
+
+</script>
