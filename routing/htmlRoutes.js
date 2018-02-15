@@ -8,7 +8,7 @@ app.get("/survey", function(req, res) {
 
 app.get("/", function(req, res) {
 	console.log("hello");
-  res.sendFile(path.join(__dirname, "../app/public/home.html"));
+  res.sendFile(path.join(__dirname, "../app/home.html"));
 });
 
 };
